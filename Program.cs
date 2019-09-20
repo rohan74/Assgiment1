@@ -10,52 +10,64 @@ namespace Assgiment1
 	{
 		static void Main(string[] args)
 		{
+
 			int a = 1, b = 128;
 			SelfDividingNumbers(a, b);
 			Console.ReadLine();
-			//add
 		}
 
 		public static void SelfDividingNumbers(int x, int y)
 		{
-			int[] allnumbers = new int[Math.Abs(y - x) +1];
-			int temp1 = x;
-			for (int j = 0; j < Math.Abs(y-x)+1; j++)
+			try
 			{
-				allnumbers[j] = temp1;
-				temp1++;
-			}
+				// extracting all the number between given argument into an array
+				int[] allnumbers = new int[Math.Abs(y - x) + 1];
 
-			for(int i = 0; i < allnumbers.Length; i++)
-			{
-				if (checkEachNum(allnumbers[i]))
+				int temp1 = x;
+				for (int j = 0; j < Math.Abs(y - x) + 1; j++)
 				{
-					Console.WriteLine(allnumbers[i]);
-				}
-			}
-
-			 bool checkEachNum(int num)
-			{
-				int temp2 = num;
-
-				while (temp2 > 0)
-				{
-					int digit;
-					digit = temp2 % 10;
-					if (!chcekDiv(num, digit))
-						return false;
-
-					temp2 = temp2 / 10;
+					allnumbers[j] = temp1;
+					temp1++;
 				}
 
-				return true;
+				for (int i = 0; i < allnumbers.Length; i++)
+				{
+					if (checkEachNum(allnumbers[i]))
+					{
+						Console.WriteLine(allnumbers[i]);
+					}
+				}
+
+				bool checkEachNum(int num)
+				{
+					int temp2 = num;
+
+					while (temp2 > 0)
+					{
+						int digit;
+						digit = temp2 % 10;
+						if (!chcekDiv(num, digit))
+							return false;
+
+						temp2 = temp2 / 10;
+					}
+
+					return true;
+
+				}
+
+				bool chcekDiv(int n, int digit)
+				{
+					return (digit != 0 && n % digit == 0);
+				}
 
 			}
-
-			bool chcekDiv(int n, int digit)
+			catch
 			{
-				return (digit != 0 && n % digit == 0);
+				Console.WriteLine("Exception occured while computing printSelfDividingNumbers()");
+
 			}
+			
 
 
 		}
