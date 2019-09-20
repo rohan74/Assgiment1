@@ -13,7 +13,15 @@ namespace Assgiment1
 
 			int a = 1, b = 128;
 			SelfDividingNumbers(a, b);
+
+			//int n2 = 5;
+			//printSeries(n2);
+
+			int n3 = 3;
+			printTriangle(n3);
+
 			Console.ReadLine();
+
 		}
 
 		public static void SelfDividingNumbers(int x, int y)
@@ -71,6 +79,61 @@ namespace Assgiment1
 
 
 		}
+
+		//public static void printSeries(int n)
+		//{
+		//	try
+		//	{
+		//		for (int i = 1; i <= 5; i++)
+		//		{
+		//			for(int j = 0; j < i; j++)
+		//			{
+
+		//			}
+		//		}
+
+
+
+		//	}
+		//	catch
+		//	{
+		//		Console.WriteLine("Exception occured while computing printSeries()");
+		//	}
+		//}
+
+
+		public static void printTriangle(int n)
+		{
+			try
+			{
+				//print 5 lines
+				for(int i = n; i > 0; i--)
+				{
+					for (int space = 0; space < n -i; ++space)
+					{
+						Console.Write(" ");
+					}
+
+					for (int j = 1; j <= i*2 -1; ++j)
+					{
+
+						Console.Write("*");
+						
+					}
+
+					for (int z = 0; z < i - 1; ++z)
+						Console.Write("*");
+
+					
+					Console.WriteLine();
+				}
+			}
+			catch
+			{
+				Console.WriteLine("Exception occured while computing printTriangle()");
+			}
+		}
+
 
 	}
 }
