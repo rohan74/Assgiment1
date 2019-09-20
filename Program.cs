@@ -20,6 +20,12 @@ namespace Assgiment1
 			int n3 = 3;
 			printTriangle(n3);
 
+			int[] J = new int[] { 1, 3 };
+			int[] S = new int[] { 1, 3, 3, 2, 2, 2, 2, 2 };
+			int r4 = numJewelsInStones(J, S);
+			Console.WriteLine(r4);
+
+
 			Console.ReadLine();
 
 		}
@@ -121,9 +127,6 @@ namespace Assgiment1
 						
 					}
 
-					for (int z = 0; z < i - 1; ++z)
-						Console.Write("*");
-
 					
 					Console.WriteLine();
 				}
@@ -134,6 +137,19 @@ namespace Assgiment1
 			}
 		}
 
+		public static int numJewelsInStones(int[] J, int[] S)
+		{
+			try
+			{
+				// Write your code here
+			}
+			catch
+			{
+				Console.WriteLine("Exception occured while computing numJewelsInStones()");
+			}
+
+			return 0;
+		}
 
 	}
 }
