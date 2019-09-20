@@ -126,7 +126,6 @@ namespace Assgiment1
 						Console.Write("*");
 						
 					}
-
 					
 					Console.WriteLine();
 				}
@@ -141,7 +140,16 @@ namespace Assgiment1
 		{
 			try
 			{
-				// Write your code here
+				int count = 0; 
+				foreach(int jewel in J)
+				{
+					foreach( int stone in S)
+					{
+						if (jewel == stone)
+							count++;
+					}
+				}
+				return count;
 			}
 			catch
 			{
