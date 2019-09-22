@@ -14,16 +14,16 @@ namespace Assgiment1
 			int a = 1, b = 128;
 			SelfDividingNumbers(a, b);
 
-			//int n2 = 5;
-			//printSeries(n2);
+			int n2 = 13;
+			printSeries(n2);
 
-			int n3 = 3;
-			printTriangle(n3);
+			//int n3 = 3;
+			//printTriangle(n3);
 
-			int[] J = new int[] { 1, 3 };
-			int[] S = new int[] { 1, 3, 3, 2, 2, 2, 2, 2 };
-			int r4 = numJewelsInStones(J, S);
-			Console.WriteLine(r4);
+			//int[] J = new int[] { 1, 3 };
+			//int[] S = new int[] { 1, 3, 3, 2, 2, 2, 2, 2 };
+			//int r4 = numJewelsInStones(J, S);
+			//Console.WriteLine(r4);
 
 
 			Console.ReadLine();
@@ -37,6 +37,7 @@ namespace Assgiment1
 				// extracting all the number between given argument into an array
 				int[] allnumbers = new int[Math.Abs(y - x) + 1];
 
+				//  
 				int temp1 = x;
 				for (int j = 0; j < Math.Abs(y - x) + 1; j++)
 				{
@@ -86,78 +87,82 @@ namespace Assgiment1
 
 		}
 
-		//public static void printSeries(int n)
+		public static void printSeries(int n)
+		{
+			try
+			{
+				//initialize num to 1 
+				int num = 1;
+				// first loop check to print number of element to print
+				for (int i = 1; i <= n;)
+				{
+					// second loop check number of times num variable to be printed
+					for (int j = 0; j < num; j++)
+					{
+						Console.WriteLine(num);
+					}
+					i = i + num;
+					num++;
+
+				}
+			}
+			catch
+			{
+				Console.WriteLine("Exception occured while computing printSeries()");
+			}
+		}
+
+
+		//public static void printTriangle(int n)
 		//{
 		//	try
 		//	{
-		//		for (int i = 1; i <= 5; i++)
+		//		//print 5 lines
+		//		for(int i = n; i > 0; i--)
 		//		{
-		//			for(int j = 0; j < i; j++)
+		//			for (int space = 0; space < n -i; ++space)
+		//			{
+		//				Console.Write(" ");
+		//			}
+
+		//			for (int j = 1; j <= i*2 -1; ++j)
 		//			{
 
+		//				Console.Write("*");
+						
 		//			}
+					
+		//			Console.WriteLine();
 		//		}
-
-
-
 		//	}
 		//	catch
 		//	{
-		//		Console.WriteLine("Exception occured while computing printSeries()");
+		//		Console.WriteLine("Exception occured while computing printTriangle()");
 		//	}
 		//}
 
+		//public static int numJewelsInStones(int[] J, int[] S)
+		//{
+		//	try
+		//	{
+		//		int count = 0; 
+		//		foreach(int jewel in J)
+		//		{
+		//			foreach( int stone in S)
+		//			{
+		//				if (jewel == stone)
+		//					count++;
+		//			}
+		//		}
+		//		return count;	
+		//	}
+		//	catch
+		//	{
+		//		Console.WriteLine("Exception occured while computing numJewelsInStones()");
+		//	}
 
-		public static void printTriangle(int n)
-		{
-			try
-			{
-				//print 5 lines
-				for(int i = n; i > 0; i--)
-				{
-					for (int space = 0; space < n -i; ++space)
-					{
-						Console.Write(" ");
-					}
-
-					for (int j = 1; j <= i*2 -1; ++j)
-					{
-
-						Console.Write("*");
-						
-					}
-					
-					Console.WriteLine();
-				}
-			}
-			catch
-			{
-				Console.WriteLine("Exception occured while computing printTriangle()");
-			}
-		}
-
-		public static int numJewelsInStones(int[] J, int[] S)
-		{
-			try
-			{
-				int count = 0; 
-				foreach(int jewel in J)
-				{
-					foreach( int stone in S)
-					{
-						if (jewel == stone)
-							count++;
-					}
-				}
-				return count;
-			}
-			catch
-			{
-				Console.WriteLine("Exception occured while computing numJewelsInStones()");
-			}
-
-			return 0;
-		}
+		//	return 0;
+		//}
 
 	}
 }
