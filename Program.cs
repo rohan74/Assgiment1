@@ -42,7 +42,7 @@ namespace Assgiment1
 				//extracting all the number between given argument into an array
 				int[] allnumbers = new int[Math.Abs(y - x) + 1];
 
-
+				// temp1 is used to assign value to allnumbers array
 				int temp1 = x;
 				for (int j = 0; j < Math.Abs(y - x) + 1; j++)
 				{
@@ -50,8 +50,10 @@ namespace Assgiment1
 					temp1++;
 				}
 
+				// check if values of allnumbers array are selfdivisible
 				for (int i = 0; i < allnumbers.Length; i++)
 				{
+					//if selfdivisible print on console
 					if (checkEachNum(allnumbers[i]))
 					{
 						Console.WriteLine(allnumbers[i]);
@@ -62,10 +64,12 @@ namespace Assgiment1
 				{
 					int temp2 = num;
 
+					//grab digit of each number
 					while (temp2 > 0)
 					{
 						int digit;
 						digit = temp2 % 10;
+						// check if the digit is didvisble by the number or retuen false
 						if (!chcekDiv(num, digit))
 							return false;
 
@@ -76,6 +80,7 @@ namespace Assgiment1
 
 				}
 
+				// return true if the digit is divisble by number
 				bool chcekDiv(int n, int digit)
 				{
 					return (digit != 0 && n % digit == 0);
@@ -101,7 +106,7 @@ namespace Assgiment1
 				//first loop check to print number of element to print
 				for (int i = 1; i <= n;)
 				{
-					//second loop check number of times num variable to be printed
+					//second loop check number of times num variable and print num to be printed
 					for (int j = 0; j < num; j++)
 					{
 						Console.WriteLine(num);
@@ -122,9 +127,10 @@ namespace Assgiment1
 		{
 			try
 			{
-				//print 5 lines
+				//print n lines
 				for (int i = n; i > 0; i--)
 				{
+					// print spaces to form the triange
 					for (int space = 0; space < n - i; ++space)
 					{
 						Console.Write(" ");
@@ -150,11 +156,14 @@ namespace Assgiment1
 		{
 			try
 			{
+				// intialize count to count the numbers of the jewels 
 				int count = 0;
+				//checking jewel and stone array
 				foreach (int jewel in J)
 				{
 					foreach (int stone in S)
 					{
+						//when jewel and stone are equal increment count
 						if (jewel == stone)
 							count++;
 					}
@@ -173,7 +182,32 @@ namespace Assgiment1
 		{
 			try
 			{
-				
+				int[,] cache = new int[a.Length + 1, b.Length + 1];
+
+				int max = 0;
+
+				for (int i = 0; i <= a.Length; i++)
+				{
+					for (int j = 0; j <= b.Length; j++)
+					{
+						if (a[i] == b[j])
+						{
+							if ( i == 0 || j == 0)
+							{
+								cache[i,j] = 1;
+							}
+							else
+							{
+								cache[i,j] = cache[i - 1,j - 1] + 1;
+							}
+							if (cache[i, j] > max)
+								max = cache[i, j];
+
+						}
+					}
+				}
+				Console.WriteLine(max);
+				return cache;
 			}
 			catch
 			{
