@@ -11,10 +11,10 @@ namespace Assgiment1
 		static void Main(string[] args)
 		{
 
-			int a = 1, b = 128;
+			int a = 1, b = 22;
 			SelfDividingNumbers(a, b);
 
-			int n2 = 13;
+			int n2 = 5;
 			printSeries(n2);
 
 			int n3 = 3;
@@ -25,10 +25,10 @@ namespace Assgiment1
 			int r4 = numJewelsInStones(J, S);
 			Console.WriteLine(r4);
 
-			int[] arr1 = new int[] { 1, 2, 5, 6, 7, 8, 9 };
-			int[] arr2 = new int[] { 1, 2, 3, 4, 5 };
-			int[] r5 = getLargestCommonSubArray(arr1, arr2);
-			Console.WriteLine(r5);
+			//int[] arr1 = new int[] { 1, 2, 5, 6, 7, 8, 9 };
+			//int[] arr2 = new int[] { 1, 2, 3, 4, 5 };
+			//int[] r5 = getLargestCommonSubArray(arr1, arr2);
+			//Console.WriteLine(r5);
 
 
 			Console.ReadLine();
@@ -178,44 +178,44 @@ namespace Assgiment1
 			return 0;
 		}
 
-		public static int[] getLargestCommonSubArray(int[] a, int[] b)
-		{
-			try
-			{
-				int[,] cache = new int[a.Length + 1, b.Length + 1];
+		//public static int[] getLargestCommonSubArray(int[] a, int[] b)
+		//{
+		//	try
+		//	{
+		//		int[,] cache = new int[a.Length + 1, b.Length + 1];
 
-				int max = 0;
+		//		int max = 0;
 
-				for (int i = 0; i <= a.Length; i++)
-				{
-					for (int j = 0; j <= b.Length; j++)
-					{
-						if (a[i] == b[j])
-						{
-							if ( i == 0 || j == 0)
-							{
-								cache[i,j] = 1;
-							}
-							else
-							{
-								cache[i,j] = cache[i - 1,j - 1] + 1;
-							}
-							if (cache[i, j] > max)
-								max = cache[i, j];
+		//		for (int i = 0; i <= a.Length; i++)
+		//		{
+		//			for (int j = 0; j <= b.Length; j++)
+		//			{
+		//				if (a[i] == b[j])
+		//				{
+		//					if ( i == 0 || j == 0)
+		//					{
+		//						cache[i,j] = 1;
+		//					}
+		//					else
+		//					{
+		//						cache[i,j] = cache[i - 1,j - 1] + 1;
+		//					}
+		//					if (cache[i, j] > max)
+		//						max = cache[i, j];
 
-						}
-					}
-				}
-				Console.WriteLine(max);
-				return cache;
-			}
-			catch
-			{
-				Console.WriteLine("Exception occured while computing getLargestCommonSubArray()");
-			}
+		//				}
+		//			}
+		//		}
+		//		Console.WriteLine(max);
+		//		return cache;
+		//	}
+		//	catch
+		//	{
+		//		Console.WriteLine("Exception occured while computing getLargestCommonSubArray()");
+		//	}
 
-			return null; // return the actual array
-		}
+		//	return null; // return the actual array
+		//}
 
 	}
 }
